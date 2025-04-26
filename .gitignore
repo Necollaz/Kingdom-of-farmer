@@ -1,1 +1,21 @@
-Library/
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Ll]ogs/
+[Uu]serSettings/
+
+# Rider
+.idea/
+*.sln.DotSettings
+
+# Visual Studio
+*.csproj
+*.sln
+
+# OS junk
+.DS_Store
+
+# Entitas configs
+Entitas.properties
+Phist.userproperties
