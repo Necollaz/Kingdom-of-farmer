@@ -3,7 +3,7 @@ using System.IO;
 using Entitas.CodeGeneration.Plugins;
 using Jenny;
 
-namespace KSyndicate.CustomGenerators.Plugins
+namespace CustomGenerators.Plugins
 {
   public static class GeneratorExtensions
   {
