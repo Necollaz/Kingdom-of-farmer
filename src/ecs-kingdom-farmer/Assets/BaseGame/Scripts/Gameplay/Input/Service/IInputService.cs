@@ -11,7 +11,7 @@ namespace BaseGame.Scripts.Gameplay.Input.Service
         public bool GetLeftMouseButtonDown();
         public bool GetLeftMouseButtonUp();
         
-        public Vector2 GetScreenMousePosition();
-        public Vector2 GetWorldMousePosition();
+        public Vector3 GetScreenMousePosition();
+        public Vector3 GetWorldMousePosition();
     }
 }

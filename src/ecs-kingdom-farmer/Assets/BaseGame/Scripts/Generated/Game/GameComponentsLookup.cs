@@ -9,18 +9,24 @@
 public static class GameComponentsLookup {
 
     public const int Id = 0;
-    public const int WorldPosition = 1;
-    public const int Direction = 2;
-    public const int Moving = 3;
-    public const int Speed = 4;
-    public const int AxisInput = 5;
-    public const int Input = 6;
+    public const int Transform = 1;
+    public const int WorldPosition = 2;
+    public const int Hero = 3;
+    public const int HeroAnimator = 4;
+    public const int Direction = 5;
+    public const int Moving = 6;
+    public const int Speed = 7;
+    public const int AxisInput = 8;
+    public const int Input = 9;
 
-    public const int TotalComponents = 7;
+    public const int TotalComponents = 10;
 
     public static readonly string[] componentNames = {
         "Id",
+        "Transform",
         "WorldPosition",
+        "Hero",
+        "HeroAnimator",
         "Direction",
         "Moving",
         "Speed",
@@ -30,7 +36,10 @@ public static class GameComponentsLookup {
 
     public static readonly System.Type[] componentTypes = {
         typeof(BaseGame.Scripts.Gameplay.Common.Id),
+        typeof(BaseGame.Scripts.Gameplay.Common.TransformComponent),
         typeof(BaseGame.Scripts.Gameplay.Common.WorldPosition),
+        typeof(BaseGame.Scripts.Gameplay.Features.Hero.Hero),
+        typeof(BaseGame.Scripts.Gameplay.Features.Hero.HeroAnimatorComponent),
         typeof(BaseGame.Scripts.Gameplay.Features.Movement.Direction),
         typeof(BaseGame.Scripts.Gameplay.Features.Movement.Moving),
         typeof(BaseGame.Scripts.Gameplay.Features.Movement.Speed),
