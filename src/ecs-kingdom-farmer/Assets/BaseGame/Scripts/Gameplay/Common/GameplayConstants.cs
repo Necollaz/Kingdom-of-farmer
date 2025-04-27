@@ -1,7 +1,7 @@
-﻿namespace Code.Gameplay.Common
+﻿namespace BaseGame.Scripts.Gameplay.Common
 {
-  public class GameplayConstants
-  {
-    public const float EnemySpawnTimer = 1;
-  }
+    public class GameplayConstants
+    {
+        public const float EnemySpawnTimer = 1;
+    }
 }

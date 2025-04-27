@@ -1,8 +1,9 @@
-namespace Code.Gameplay.Common.Random
+namespace BaseGame.Scripts.Gameplay.Common.Random
 {
-  public interface IRandomService
-  {
-    float Range(float inclusiveMin, float inclusiveMax);
-    int Range(int inclusiveMin, int exclusiveMax);
-  }
+    public interface IRandomService
+    {
+        float Range(float inclusiveMin, float inclusiveMax);
+
+        int Range(int inclusiveMin, int exclusiveMax);
+    }
 }
