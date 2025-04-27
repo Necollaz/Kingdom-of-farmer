@@ -5,6 +5,19 @@ namespace BaseGame.Scripts.Gameplay.Input.Service
 {
     public class StandaloneInputService : IInputService
     {
+        private Camera _mainCamera;
+        private Vector3 _screenPosition;
+
+        public Camera CameraMain
+        {
+            get
+            {
+                if(_mainCamera == null && Camera.main != null)
+                    _mainCamera = Camera.main;
+
+                return _mainCamera;
+            }
+        }
         public float GetVerticalAxis() => UnityEngine.Input.GetAxis("Vertical");
 
         public float GetHorizontalAxis() => UnityEngine.Input.GetAxis("Horizontal");
@@ -17,8 +30,17 @@ namespace BaseGame.Scripts.Gameplay.Input.Service
 
         public bool GetLeftMouseButtonUp() => UnityEngine.Input.GetMouseButtonUp(0) && !EventSystem.current.IsPointerOverGameObject();
 
-        public Vector2 GetScreenMousePosition() => throw new System.NotImplementedException(); //CameraMain ? UnityEngine.Input.mousePosition : new Vector3();
+        public Vector3 GetScreenMousePosition() => CameraMain ? UnityEngine.Input.mousePosition : new Vector3();
 
-        public Vector2 GetWorldMousePosition() => throw new System.NotImplementedException();
+        public Vector3 GetWorldMousePosition()
+        {
+            if(CameraMain == null)
+                return Vector3.zero;
+
+            _screenPosition.x = UnityEngine.Input.mousePosition.x;
+            _screenPosition.y = UnityEngine.Input.mousePosition.y;
+
+            return CameraMain.ScreenToWorldPoint(_screenPosition);
+        }
     }
 }

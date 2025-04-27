@@ -5,21 +5,30 @@ namespace BaseGame.Scripts.Gameplay.Features.Hero.Behaviours
 {
     public class HeroAnimator : MonoBehaviour, IDamageTakenAnimator
     {
-        private static readonly int OverlayIntensityProperty = Shader.PropertyToID("_OverlayIntensity");
+        private static readonly int HorizontalHash = Animator.StringToHash("horizontal");
+        private static readonly int VerticalHash = Animator.StringToHash("vertical");
+        private static readonly int AttackHash = Animator.StringToHash("attack");
+        private static readonly int DiedHash = Animator.StringToHash("died");
+        private static readonly int IsMovingHash = Animator.StringToHash("isMoving");
         
-        private readonly int _isMovingHash = Animator.StringToHash("IsMoving");
-        private readonly int _attackHash = Animator.StringToHash("attack");
-        private readonly int _diedHash = Animator.StringToHash("died");
+        [SerializeField] private Animator _animator;
 
-        public Animator Animator;
-
-        public void PlayMove() => Animator.SetBool(_isMovingHash, true);
-
-        public void PlayIdle() => Animator.SetBool(_isMovingHash, false);
-
-        public void PlayAttack() => Animator.SetTrigger(_attackHash);
+        public void UpdateMovement(Vector3 direction)
+        {
+            float horizontal = direction.x;
+            float vertical = direction.z;
+            
+            _animator.SetFloat(HorizontalHash, horizontal);
+            _animator.SetFloat(VerticalHash, vertical);
+            
+            bool isMoving = direction.sqrMagnitude > 0.01f;
+            
+            _animator.SetBool(IsMovingHash, isMoving);
+        }
         
-        public void PlayDied() => Animator.SetTrigger(_diedHash);
+        public void PlayAttack() => _animator.SetTrigger(AttackHash);
+        
+        public void PlayDied() => _animator.SetTrigger(DiedHash);
 
         public void PlayDamageTaken()
         {
@@ -28,8 +37,8 @@ namespace BaseGame.Scripts.Gameplay.Features.Hero.Behaviours
 
         public void ResetAll()
         {
-            Animator.ResetTrigger(_attackHash);
-            Animator.ResetTrigger(_diedHash);
+            _animator.ResetTrigger(AttackHash);
+            _animator.ResetTrigger(DiedHash);
         }
     }
 }

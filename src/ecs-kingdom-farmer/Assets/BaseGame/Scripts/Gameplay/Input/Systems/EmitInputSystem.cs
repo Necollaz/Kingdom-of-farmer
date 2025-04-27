@@ -20,7 +20,7 @@ namespace BaseGame.Scripts.Gameplay.Input.Systems
             foreach(GameEntity input in _inputs)
             {
                 if(_inputService.HasAxisInput())
-                    input.ReplaceAxisInput(new Vector2(_inputService.GetHorizontalAxis(), _inputService.GetVerticalAxis()));
+                    input.ReplaceAxisInput(new Vector3(_inputService.GetHorizontalAxis(), 0f, _inputService.GetVerticalAxis()));
                 else if(input.hasAxisInput)
                     input.RemoveAxisInput();
             }
