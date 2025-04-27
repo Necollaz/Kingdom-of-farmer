@@ -8,36 +8,33 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int Active = 0;
-    public const int Damage = 1;
-    public const int DamageTakenAnimator = 2;
-    public const int EntityLink = 3;
-    public const int Id = 4;
-    public const int SpriteRenderer = 5;
-    public const int Transform = 6;
-    public const int WorldPosition = 7;
+    public const int Id = 0;
+    public const int WorldPosition = 1;
+    public const int Direction = 2;
+    public const int Moving = 3;
+    public const int Speed = 4;
+    public const int AxisInput = 5;
+    public const int Input = 6;
 
-    public const int TotalComponents = 8;
+    public const int TotalComponents = 7;
 
     public static readonly string[] componentNames = {
-        "Active",
-        "Damage",
-        "DamageTakenAnimator",
-        "EntityLink",
         "Id",
-        "SpriteRenderer",
-        "Transform",
-        "WorldPosition"
+        "WorldPosition",
+        "Direction",
+        "Moving",
+        "Speed",
+        "AxisInput",
+        "Input"
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(BaseGame.Scripts.Gameplay.Common.Active),
-        typeof(BaseGame.Scripts.Gameplay.Common.Damage),
-        typeof(BaseGame.Scripts.Gameplay.Common.DamageTakenAnimator),
-        typeof(BaseGame.Scripts.Gameplay.Common.EntityLink),
         typeof(BaseGame.Scripts.Gameplay.Common.Id),
-        typeof(BaseGame.Scripts.Gameplay.Common.SpriteRendererComponent),
-        typeof(BaseGame.Scripts.Gameplay.Common.TransformComponent),
-        typeof(BaseGame.Scripts.Gameplay.Common.WorldPosition)
+        typeof(BaseGame.Scripts.Gameplay.Common.WorldPosition),
+        typeof(BaseGame.Scripts.Gameplay.Features.Movement.Direction),
+        typeof(BaseGame.Scripts.Gameplay.Features.Movement.Moving),
+        typeof(BaseGame.Scripts.Gameplay.Features.Movement.Speed),
+        typeof(BaseGame.Scripts.Gameplay.Input.AxisInput),
+        typeof(BaseGame.Scripts.Gameplay.Input.Input)
     };
 }
