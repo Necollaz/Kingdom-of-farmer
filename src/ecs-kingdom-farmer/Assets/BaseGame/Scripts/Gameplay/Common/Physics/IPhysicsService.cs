@@ -1,4 +1,4 @@
-﻿/*using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Code.Gameplay.Common.Physics
@@ -13,4 +13,4 @@ namespace Code.Gameplay.Common.Physics
     int OverlapCircle(Vector3 worldPos, float radius, Collider2D[] hits, int layerMask);
     int CircleCastNonAlloc(Vector3 position, float radius, int layerMask, GameEntity[] hitBuffer);
   }
-}*/
+}
