@@ -1,3 +1,4 @@
+using BaseGame.Scripts.Gameplay.Common.Time;
 using BaseGame.Scripts.Gameplay.Features.Hero.Systems;
 
 namespace BaseGame.Scripts.Gameplay.Features.Hero

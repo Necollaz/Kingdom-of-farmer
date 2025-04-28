@@ -15,11 +15,12 @@ public static class GameComponentsLookup {
     public const int HeroAnimator = 4;
     public const int Direction = 5;
     public const int Moving = 6;
-    public const int Speed = 7;
-    public const int AxisInput = 8;
-    public const int Input = 9;
+    public const int RotationSmooth = 7;
+    public const int Speed = 8;
+    public const int AxisInput = 9;
+    public const int Input = 10;
 
-    public const int TotalComponents = 10;
+    public const int TotalComponents = 11;
 
     public static readonly string[] componentNames = {
         "Id",
@@ -29,6 +30,7 @@ public static class GameComponentsLookup {
         "HeroAnimator",
         "Direction",
         "Moving",
+        "RotationSmooth",
         "Speed",
         "AxisInput",
         "Input"
@@ -42,6 +44,7 @@ public static class GameComponentsLookup {
         typeof(BaseGame.Scripts.Gameplay.Features.Hero.HeroAnimatorComponent),
         typeof(BaseGame.Scripts.Gameplay.Features.Movement.Direction),
         typeof(BaseGame.Scripts.Gameplay.Features.Movement.Moving),
+        typeof(BaseGame.Scripts.Gameplay.Features.Movement.RotationSmooth),
         typeof(BaseGame.Scripts.Gameplay.Features.Movement.Speed),
         typeof(BaseGame.Scripts.Gameplay.Input.AxisInput),
         typeof(BaseGame.Scripts.Gameplay.Input.Input)
